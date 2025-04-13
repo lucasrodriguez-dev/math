@@ -1,21 +1,17 @@
 import React, { useState } from 'react'
-import { extendedMcd } from '../../functions/discrete'
+import { mcm } from '../../functions/discrete'
 
 export default function MCD() {
 
     const [a, setA] = useState('')
     const [b, setB] = useState('')
     const [usedInputs, setUsedInputs] = useState<{a: string, b: string} | null>(null)
-    const [result, setResult] = useState<{
-        mcd: bigint,
-        x_a: bigint,
-        x_b: bigint
-    } | null>(null)
+    const [result, setResult] = useState<bigint | null>(null)
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault()
         setUsedInputs({a,b})
-        setResult(extendedMcd(BigInt(a),BigInt(b)))
+        setResult(mcm(BigInt(a),BigInt(b)))
     }
 
     return (
@@ -23,12 +19,12 @@ export default function MCD() {
             <form onSubmit={handleSubmit} className='w-full flex flex-col gap-5'>
                 <input type="number" value={a} placeholder='a' onChange={(e) => setA(e.target.value)} className='border outline-none py-2 px-3 rounded-md w-full'/>
                 <input type="number" value={b} placeholder='b' onChange={(e) => setB(e.target.value)} className='border outline-none py-2 px-3 rounded-md w-full'/>
-                <button type='submit' className='btn-primary'>Calcular MCD</button>
+                <button type='submit' className='btn-primary'>Calcular MCM</button>
             </form>
             <p>
                 {
                     result === null ? ""
-                    : `mcd(${usedInputs?.a}, ${usedInputs?.b}) = ${usedInputs?.a}·${result.x_a} + ${usedInputs?.b}·${result.x_b} = ${result.mcd}`
+                    : `mcm(${usedInputs?.a}, ${usedInputs?.b}) = ${result}`
                 }
             </p>
         </div>

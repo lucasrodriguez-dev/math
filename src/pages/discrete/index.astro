@@ -1,12 +1,24 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import MCD from '../../components/discrete/MCD.tsx'
+import MCM from '../../components/discrete/MCM.tsx'
+import Prime from '../../components/discrete/Prime.tsx'
 ---
 
 <Layout>
     <h1>Matemática Discreta</h1>
-    <section id="section-mcd">
-        <h2>Máximo Común Divisor</h2>
-        <MCD client:load/>
+    <section id="section-functions" class="mt-10 flex flex-row flex-wrap gap-5">
+        <article id="article-mcd">
+            <h2>Máximo Común Divisor</h2>
+            <MCD client:load/>
+        </article>
+        <article id="article-mcm">
+            <h2>Mínimo Común Múltiplo</h2>
+            <MCM client:load/>
+        </article>
+        <article id="article-prime">
+            <h2>Factorización en Primos</h2>
+            <Prime client:load/>
+        </article>
     </section>
 </Layout>

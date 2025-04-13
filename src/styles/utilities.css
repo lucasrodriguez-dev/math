@@ -2,6 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  h1{
+    @apply text-4xl mb-5;
+  }
+  h2{
+    @apply text-xl mb-3;
+  }
+}
+
 @layer components {
   .px-global {
     @apply px-6 md:px-12;
@@ -10,9 +19,12 @@
     @apply px-4 py-2 rounded-md font-medium text-center hover:cursor-pointer transition;
   }
   .btn-primary {
-    @apply btn bg-primary text-white;
+    @apply btn bg-primary-dark text-white;
   }
   .btn-secondary {
     @apply btn bg-secondary text-white;
+  }
+  .card {
+    @apply bg-primary-light;
   }
 }

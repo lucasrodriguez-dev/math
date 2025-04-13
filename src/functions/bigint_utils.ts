@@ -18,5 +18,12 @@ export function euclideanMod(a: bigint, b: bigint): bigint {
     if(b === 0n)
         throw new Error("El módulo de un número entre cero no está definido")
     const r = a % b
-    return r >= 0n ? r : r + (b > 0n ? b : -b)
+    return r >= 0n ? r : r + abs(b)
+}
+
+export function factorExponents(factors: bigint[]): [bigint, number][]{
+    const exponents: Map<bigint, number> = new Map()
+    for(const factor of factors)
+        exponents.set(factor, (exponents.get(factor) || 0) + 1)
+    return Array.from(exponents.entries())
 }

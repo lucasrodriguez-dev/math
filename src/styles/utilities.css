@@ -12,7 +12,7 @@
   h2{
     @apply text-xl mb-4;
   }
-  input{
+  input, select{
     @apply py-2 px-4 rounded-md outline-none bg-surface border border-gray-300 focus:border-blue-500 shadow-sm;
   }
 }

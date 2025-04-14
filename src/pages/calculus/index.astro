@@ -1,8 +1,14 @@
 ---
+import ComplexNotation from "../../components/calculus/ComplexNotation";
 import Layout from "../../layouts/Layout.astro";
 ---
 
 <Layout>
     <h1>Cálculo Diferencial e Integral</h1>
-    <p>Próximamente...</p>
+    <section class="section-math-article">
+        <article class="math-article">
+            <h2>Cambio de notación</h2>
+            <ComplexNotation client:load/>
+        </article>
+    </section>
 </Layout>

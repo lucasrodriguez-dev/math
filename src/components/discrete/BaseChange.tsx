@@ -17,11 +17,11 @@ export default function BaseChange() {
     }
 
     return (
-        <div className='card'>
+        <div className='card-lg'>
             <form onSubmit={handleSubmit} className='w-full flex flex-col gap-5'>
-                <input type="number" min={0} value={n} placeholder='número' onChange={(e) => setN(e.target.value)} className='border outline-none py-2 px-3 rounded-md w-full' />
-                <input type="number" min={2} value={nBase} placeholder='base original' onChange={(e) => setNBase(e.target.value)} className='border outline-none py-2 px-3 rounded-md w-full' />
-                <input type="number" min={2} value={newBase} placeholder='nueva base' onChange={(e) => setNewBase(e.target.value)} className='border outline-none py-2 px-3 rounded-md w-full' />
+                <input type="number" min={0} value={n} placeholder='número' onChange={(e) => setN(e.target.value)}/>
+                <input type="number" min={2} value={nBase} placeholder='base original' onChange={(e) => setNBase(e.target.value)}/>
+                <input type="number" min={2} value={newBase} placeholder='nueva base' onChange={(e) => setNewBase(e.target.value)}/>
                 <button type='submit' className='btn-primary'>Cambiar de base</button>
             </form>
             <code className='math'>

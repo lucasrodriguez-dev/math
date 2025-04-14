@@ -5,14 +5,19 @@ export default {
     extend: {
       colors: {
         primary: {
-          default: '#1E40AF',
-          light: '#aed6f1',
-          dark: '#1a5276'
+          default: '#2856cd',
+          light: '#DBEAFE',
+          dark: '#243f84'
         },
-        secondary: '#F59E0B',
-        accent: '#10B981',
+        secondary: '#c3dcfa',
+        accent: '#FACC15',
+        background: '#F8FAFF',
+        surface: '#eeeeef',
+        result: '#dbeafe',
+        header: '#1e293b',
         bgDark: '#1F2937',
-        textLight: '#F3F4F6'
+        text: '#1F2937',
+        textLight: '#F8FAFF'
       },
       fontFamily: {
         questrial: ['Questrial', 'system-ui'],

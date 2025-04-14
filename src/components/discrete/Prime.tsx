@@ -15,7 +15,7 @@ export default function Prime() {
     return (
         <div className='card'>
             <form onSubmit={handleSubmit} className='w-full flex flex-col gap-5'>
-                <input type="number" min={2} value={n} placeholder='n' onChange={(e) => setN(e.target.value)} className='border outline-none py-2 px-3 rounded-md w-full'/>
+                <input type="number" min={2} value={n} placeholder='n' onChange={(e) => setN(e.target.value)}/>
                 <button type='submit' className='btn-primary'>Factorizar</button>
             </form>
             <code className='math'>

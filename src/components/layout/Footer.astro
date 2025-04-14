@@ -1,3 +1,35 @@
-<footer class="w-full py-10 px-global flex justify-between items-center bg-secondary">
-    <small>Lucas Rodríguez &copy;</small>
+---
+import Email from "../../icons/Email.astro";
+import Github from "../../icons/Github.astro";
+import Linkedin from "../../icons/Linkedin.astro";
+import Whatsapp from "../../icons/Whatsapp.astro";
+import { media_links } from "../../assets/info";
+---
+
+<footer class="py-10 flex justify-between items-center">
+    <small>
+        <a href="https://luthi.dev" target="_blank">Luthi &copy;</a>
+    </small>
+    <ul class="flex flex-row gap-6">
+        <li>
+            <a href={media_links.linkedin} target="_blank">
+                <Linkedin class="w-4 h-4" />
+            </a>
+        </li>
+        <li>
+            <a href={media_links.github} target="_blank">
+                <Github class="w-4 h-4" />
+            </a>
+        </li>
+        <li>
+            <a href={media_links.email}>
+                <Email class="w-4 h-4" />
+            </a>
+        </li>
+        <li>
+            <a href={media_links.whatsapp} target="_blank" rel="noopener noreferrer">
+                <Whatsapp class="w-4 h-4" />
+            </a>
+        </li>
+    </ul>
 </footer>

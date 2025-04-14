@@ -14,7 +14,7 @@ export default function Divisors() {
     return (
         <div className='card'>
             <form onSubmit={handleSubmit} className='w-full flex flex-col gap-5'>
-                <input type="number" value={n} placeholder='n' onChange={(e) => setN(e.target.value)} className='border outline-none py-2 px-3 rounded-md w-full'/>
+                <input type="number" value={n} placeholder='n' onChange={(e) => setN(e.target.value)}/>
                 <button type='submit' className='btn-primary'>Calcular cantidad</button>
             </form>
             <code className='math'>

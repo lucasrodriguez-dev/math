@@ -3,11 +3,17 @@
 @tailwind utilities;
 
 @layer base {
+  header, footer {
+    @apply w-full px-global bg-header text-white;
+  }
   h1{
-    @apply text-4xl mb-5;
+    @apply text-4xl mb-14;
   }
   h2{
-    @apply text-xl mb-3;
+    @apply text-xl mb-4;
+  }
+  input{
+    @apply py-2 px-4 rounded-md outline-none bg-surface border border-gray-300 focus:border-blue-500 shadow-sm;
   }
 }
 
@@ -16,21 +22,27 @@
     @apply px-6 md:px-12;
   }
   .btn {
-    @apply px-4 py-2 rounded-md font-medium text-center hover:cursor-pointer transition;
+    @apply px-4 py-2 rounded-md font-medium text-center outline-none hover:cursor-pointer transition;
   }
   .btn-primary {
-    @apply btn bg-primary-dark text-white;
+    @apply btn bg-primary-dark text-textLight;
   }
   .btn-secondary {
-    @apply btn bg-secondary text-white;
+    @apply btn bg-secondary text-text;
   }
   .card {
-    @apply min-h-[400px] bg-primary-light p-10 flex flex-col gap-10 overflow-auto rounded-md;
+    @apply h-[400px] bg-primary-light p-10 flex flex-col gap-10 overflow-auto border border-gray-300 rounded-2xl outline-none;
+  }
+  .card-lg {
+    @apply card h-[500px];
+  }
+  .section-math-article {
+    @apply flex flex-row flex-wrap gap-16 items-stretch;
   }
   .math-article {
-    @apply h-full overflow-auto;
+    @apply flex-1 min-w-[300px] max-w-[400px] overflow-auto;
   }
   .math {
-    @apply font-math text-lg bg-gray-200 p-3 rounded min-h-20;
+    @apply font-math text-lg p-4 min-h-20 bg-result text-blue-900 rounded-md whitespace-pre-wrap;
   }
 }

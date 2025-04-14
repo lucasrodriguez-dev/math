@@ -13,12 +13,12 @@ export default function Prime() {
     }
 
     return (
-        <div className='w-fit p-10 flex flex-col gap-5 bg-blue-300 overflow-hidden rounded-md'>
+        <div className='card'>
             <form onSubmit={handleSubmit} className='w-full flex flex-col gap-5'>
-                <input type="number" value={n} placeholder='n' onChange={(e) => setN(e.target.value)} className='border outline-none py-2 px-3 rounded-md w-full'/>
+                <input type="number" min={2} value={n} placeholder='n' onChange={(e) => setN(e.target.value)} className='border outline-none py-2 px-3 rounded-md w-full'/>
                 <button type='submit' className='btn-primary'>Factorizar</button>
             </form>
-            <p>
+            <code className='math'>
                 {
                     result === null ? ""
                     : factorExponents(result).map(([factor, exponent], index) => (
@@ -29,7 +29,7 @@ export default function Prime() {
                         </span>
                     ))
                 }
-            </p>
+            </code>
         </div>
     )
 }

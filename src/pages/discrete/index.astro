@@ -3,22 +3,47 @@ import Layout from "../../layouts/Layout.astro";
 import MCD from '../../components/discrete/MCD.tsx'
 import MCM from '../../components/discrete/MCM.tsx'
 import Prime from '../../components/discrete/Prime.tsx'
+import Divisors from "../../components/discrete/Divisors";
+import Congruent from "../../components/discrete/Congruent";
+import CongruentEcuation from "../../components/discrete/CongruentEcuation";
+import Diophantine from "../../components/discrete/Diophantine";
+import BaseChange from "../../components/discrete/BaseChange";
 ---
 
 <Layout>
     <h1>Matemática Discreta</h1>
-    <section id="section-functions" class="mt-10 flex flex-row flex-wrap gap-5">
-        <article id="article-mcd">
+    <section id="section-functions" class="mt-10 flex flex-row flex-wrap gap-28">
+        <article id="article-mcd" class="math-article">
             <h2>Máximo Común Divisor</h2>
             <MCD client:load/>
         </article>
-        <article id="article-mcm">
+        <article id="article-mcm" class="math-article">
             <h2>Mínimo Común Múltiplo</h2>
             <MCM client:load/>
         </article>
-        <article id="article-prime">
+        <article id="article-prime" class="math-article">
             <h2>Factorización en Primos</h2>
             <Prime client:load/>
+        </article>
+        <article id="article-divisors" class="math-article">
+            <h2>Cantidad de Divisores Positivos</h2>
+            <Divisors client:load/>
+        </article>
+        <article id="article-congruent" class="math-article">
+            <h2>Congruencia</h2>
+            <Congruent client:load/>
+        </article>
+        <article id="article-congruent_ecuation" class="math-article">
+            <h2>Ecuación de Congruencia</h2>
+            <CongruentEcuation client:load/>
+        </article>
+        <article id="article-diophantine" class="math-article">
+            <h2>Ecuación Diofántica</h2>
+            <Diophantine client:load/>
+        </article>
+        <article id="article-basechange" class="math-article">
+            <h2>Cambio de Base</h2>
+            <BaseChange client:load/>
         </article>
     </section>
 </Layout>

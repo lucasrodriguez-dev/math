@@ -27,3 +27,8 @@ export function factorExponents(factors: bigint[]): [bigint, number][]{
         exponents.set(factor, (exponents.get(factor) || 0) + 1)
     return Array.from(exponents.entries())
 }
+
+export function digits(n: bigint): bigint[]{
+    if(n < 0n) throw new Error("El número debe ser no negativo")
+    return n.toString().split("").map((d) => BigInt(d))
+}

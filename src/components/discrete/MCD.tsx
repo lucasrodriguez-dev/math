@@ -19,18 +19,26 @@ export default function MCD() {
     }
 
     return (
-        <div className='w-fit p-10 flex flex-col gap-5 bg-blue-300 overflow-hidden rounded-md'>
+        <div className='card'>
             <form onSubmit={handleSubmit} className='w-full flex flex-col gap-5'>
                 <input type="number" value={a} placeholder='a' onChange={(e) => setA(e.target.value)} className='border outline-none py-2 px-3 rounded-md w-full'/>
                 <input type="number" value={b} placeholder='b' onChange={(e) => setB(e.target.value)} className='border outline-none py-2 px-3 rounded-md w-full'/>
                 <button type='submit' className='btn-primary'>Calcular MCD</button>
             </form>
-            <p>
+            <code className='math'>
                 {
                     result === null ? ""
-                    : `mcd(${usedInputs?.a}, ${usedInputs?.b}) = ${usedInputs?.a}·${result.x_a} + ${usedInputs?.b}·${result.x_b} = ${result.mcd}`
+                    : (
+                        <>
+                        {`mcd(${usedInputs?.a}, ${usedInputs?.b})`}
+                        <br />
+                        {`= ${usedInputs?.a}(${result.x_a}) + ${usedInputs?.b}(${result.x_b})`}
+                        <br />
+                        {`= ${result.mcd}`}
+                        </>
+                    )
                 }
-            </p>
+            </code>
         </div>
     )
 }

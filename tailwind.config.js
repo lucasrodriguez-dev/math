@@ -15,7 +15,8 @@ export default {
         textLight: '#F3F4F6'
       },
       fontFamily: {
-        questrial: ['Questrial', 'system-ui']
+        questrial: ['Questrial', 'system-ui'],
+        math: ['JetBrains Mono', 'monospace']
       }
     },
   },

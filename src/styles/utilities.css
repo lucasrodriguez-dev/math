@@ -25,6 +25,12 @@
     @apply btn bg-secondary text-white;
   }
   .card {
-    @apply bg-primary-light;
+    @apply min-h-[400px] bg-primary-light p-10 flex flex-col gap-10 overflow-auto rounded-md;
+  }
+  .math-article {
+    @apply h-full overflow-auto;
+  }
+  .math {
+    @apply font-math text-lg bg-gray-200 p-3 rounded min-h-20;
   }
 }

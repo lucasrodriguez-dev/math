@@ -1,19 +1,27 @@
 ---
+import { MathTable } from '../components/general/MathTable';
 import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout>
 	<h1>Bienvenido a Math 👋</h1>
-	<p>Calcule en el área de la matemática que necesite</p>
-	<ul class="flex flex-col gap-3 mt-5">
-		<li>
-			<a href="/discrete" class="btn-secondary">Matemática Discreta</a>
-		</li>
-		<li>
-			<a href="/calculus" class="btn-secondary">Cálculo Diferencial e Integral</a>
-		</li>
-		<li>
-			<a href="/linear_algebra" class="btn-secondary">Álgebra Lineal</a>
-		</li>
-	</ul>
+	<section class="mt-5 flex flex-col md:flex-row justify-between">
+		<article>
+			<p class="mb-5">Calcule en el área de la matemática que necesite</p>
+			<ul class="flex flex-col gap-3">
+				<li>
+					<a href="/discrete" class="btn-secondary">Matemática Discreta</a>
+				</li>
+				<li>
+					<a href="/calculus" class="btn-secondary">Cálculo Diferencial e Integral</a>
+				</li>
+				<li>
+					<a href="/linear_algebra" class="btn-secondary">Álgebra Lineal</a>
+				</li>
+			</ul>
+		</article>
+		<article>
+			<MathTable client:load/>
+		</article>
+	</section>
 </Layout>

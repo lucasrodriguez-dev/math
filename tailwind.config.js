@@ -10,6 +10,7 @@ export default {
           dark: '#243f84'
         },
         secondary: '#c3dcfa',
+        terciary: '#ddd',
         accent: '#FACC15',
         background: '#F8FAFF',
         surface: '#eeeeef',

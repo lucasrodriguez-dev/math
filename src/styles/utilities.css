@@ -12,6 +12,9 @@
   h2{
     @apply text-xl mb-4;
   }
+  h3{
+    @apply text-base mb-3;
+  }
   input, select{
     @apply py-2 px-4 rounded-md outline-none bg-surface border border-gray-300 focus:border-blue-500 shadow-sm;
   }
@@ -30,6 +33,9 @@
   .btn-secondary {
     @apply btn bg-secondary text-text;
   }
+  .btn-terciary {
+    @apply btn-secondary bg-terciary text-sm;
+  }
   .card {
     @apply h-[400px] bg-primary-light p-10 flex flex-col gap-10 overflow-auto border border-gray-300 rounded-2xl outline-none;
   }
@@ -44,5 +50,11 @@
   }
   .math {
     @apply font-math text-lg p-4 min-h-20 bg-result text-blue-900 rounded-md whitespace-pre-wrap;
+  }
+  .symbol_list {
+    @apply flex flex-row gap-1;
+  }
+  .symbol_list li button {
+    @apply btn-terciary;
   }
 }

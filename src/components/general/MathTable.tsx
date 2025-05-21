@@ -5,9 +5,9 @@ const lowerCaseGreekLetters = [["α", "alfa"], ["β", "beta"], ["γ", "gamma"], 
 
 const logicSymbols = [["⊥", "bottom"], ["¬", "not"], ["→", "then"], ["↔", "iff"], ["∧", "and"], ["∨", "or"], ["∀", "para todo"], ["∃", "existe"]]
 
-const arithmeticSymbols = [["+", "más"], ["-", "menos"], ["±", "más – menos"], ["×", "por"], ["/", "barra"], ["%", "módulo"], ["√", "raíz"], ["=", "igual"], ["≠", "distinto"], ["<", "menor"], [">", "mayor"], ["≤", "menor o igual"], ["≥", "mayor o igual"], ["≪", "mucho menor"], ["≫", "mucho mayor"], ["∞", "infinito"], ["∫", "integral"], ["∑", "sumatoria"], ["∏", "productoria"]]
+const arithmeticSymbols = [["+", "más"], ["-", "menos"], ["±", "más – menos"], ["×", "por"], ["/", "barra"], ["%", "módulo"], ["²", "al cuadrado"], ["³", "al cubo"], ["√", "raíz cuadrada"], ["∛", "raíz cúbica"], ["=", "igual"], ["≠", "distinto"], ["<", "menor"], [">", "mayor"], ["≤", "menor o igual"], ["≥", "mayor o igual"], ["≪", "mucho menor"], ["≫", "mucho mayor"], ["∞", "infinito"], ["∫", "integral"], ["∑", "sumatoria"], ["∏", "productoria"], ["∣", "divide"], ["∤", "no divide"], ["≡", "congruente"], ["≢", "no congruente"]]
 
-const setSymbols = [["∅", "conjunto vacío"], ["{}", "conjunto"], ["⊂", "contenido estricto"], ["⊆", "contenido"], ["⊃", "contiene estricto"], ["⊇", "contiene"], ["∪", "unión"], ["∩", "intersección"], ["∖", "diferencia"], ["⋃", "unión de familia"], ["⋂", "intersección de familia"], ["∈", "pertenece"], ["∉", "no pertenece"]]
+const setSymbols = [["∅", "conjunto vacío"], ["{}", "conjunto"], ["∁", "complemento"], ["⊂", "contenido estricto"], ["⊆", "contenido"], ["⊃", "contiene estricto"], ["⊇", "contiene"], ["∪", "unión"], ["∩", "intersección"], ["∖", "diferencia"], ["⋃", "unión de familia"], ["⋂", "intersección de familia"], ["∈", "pertenece"], ["∉", "no pertenece"], ["∃", "existe"], ["∄", "no existe"]]
 
 const algebraSymbols = [["⟨⟩", "producto interno"], ["∥∥", "norma"], ["⊕", "suma directa"]]
 
@@ -38,6 +38,20 @@ export function MathTable() {
                 </ul>
             </article>
             <article>
+                <h3>Aritmética</h3>
+                    <div>
+                        <ul className='symbol_list'>
+                            {arithmeticSymbols.map(letter => 
+                                <li>
+                                    <button title={letter[1]} onClick={() => navigator.clipboard.writeText(letter[0])}>
+                                        {letter[0]}
+                                    </button>
+                                </li>
+                            )}
+                        </ul>
+                </div>
+            </article>
+            <article>
                 <h3>Teoría de conjuntos</h3>
                     <div>
                         <ul className='symbol_list'>
@@ -51,20 +65,6 @@ export function MathTable() {
                         </ul>
                 </div>
             </article>
-            <article>
-                <h3>Conjuntos numéricos</h3>
-                    <div>
-                        <ul className='symbol_list'>
-                            {numericSetsSymbols.map(letter => 
-                                <li>
-                                    <button title={letter[1]} onClick={() => navigator.clipboard.writeText(letter[0])}>
-                                        {letter[0]}
-                                    </button>
-                                </li>
-                            )}
-                        </ul>
-                </div>
-            </article>            
             <article>
                 <h3>Lógica</h3>
                 <div>
@@ -80,10 +80,10 @@ export function MathTable() {
                 </div>
             </article>
             <article>
-                <h3>Aritmética</h3>
+                <h3>Conjuntos numéricos</h3>
                     <div>
                         <ul className='symbol_list'>
-                            {arithmeticSymbols.map(letter => 
+                            {numericSetsSymbols.map(letter => 
                                 <li>
                                     <button title={letter[1]} onClick={() => navigator.clipboard.writeText(letter[0])}>
                                         {letter[0]}

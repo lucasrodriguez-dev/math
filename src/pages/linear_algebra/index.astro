@@ -1,8 +1,19 @@
 ---
+import { ProductoInterno } from "../../components/algebra/ProductoInterno";
+import { Norma } from "../../components/algebra/Norma";
 import Layout from "../../layouts/Layout.astro";
 ---
 
 <Layout>
     <h1>Álgebra Lineal</h1>
-    <p>Próximamente...</p>
+    <section class="section-math-article">
+        <article id="article-piusual" class="math-article">
+            <h2>Producto Interno</h2>
+            <ProductoInterno client:load/>
+        </article>
+        <article id="article-normausual" class="math-article">
+            <h2>Norma</h2>
+            <Norma client:load/>
+        </article>
+    </section>
 </Layout>

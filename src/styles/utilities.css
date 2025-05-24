@@ -43,7 +43,7 @@
     @apply card h-[500px];
   }
   .section-math-article {
-    @apply flex flex-row flex-wrap gap-16 items-stretch;
+    @apply flex flex-row flex-wrap gap-16;
   }
   .math-article {
     @apply flex-1 min-w-[300px] max-w-[400px] overflow-auto;
@@ -56,5 +56,27 @@
   }
   .symbol_list li button {
     @apply btn-terciary;
+  }
+  .input_vector {
+    @apply bg-transparent border-0 border-b-2 rounded-none shadow-none outline-none px-0 text-center;
+    width: auto;
+    min-width: 0;
+  }
+  .fieldset_vector {
+    @apply flex flex-row gap-4;
+  }
+  .parentesis_vector {
+    @apply text-2xl leading-none flex items-center font-math;
+  }
+  .coordenada_vector {
+    @apply flex items-center gap-1;
+  }
+  .input_vector::-webkit-outer-spin-button,
+  .input_vector::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  .input_vector[type='number'] {
+    -moz-appearance: textfield;
   }
 }

@@ -52,7 +52,7 @@
     @apply font-math text-lg p-4 min-h-20 bg-result text-blue-900 rounded-md whitespace-pre-wrap;
   }
   .symbol_list {
-    @apply flex flex-row gap-1;
+    @apply flex flex-row gap-1 flex-wrap;
   }
   .symbol_list li button {
     @apply btn-terciary;

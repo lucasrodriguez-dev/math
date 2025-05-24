@@ -15,12 +15,12 @@ const numericSetsSymbols = [["ℂ", "complejos"], ["ℝ", "reales"], ["ℚ", "ra
 
 export function MathTable() {
   return (
-        <section className='flex flex-col gap-8'>
+        <div className='flex flex-col gap-10'>
             <article>
                 <h3>Letras griegas</h3>
-                <ul className='symbol_list mb-1'>
-                    {upperCaseGreekLetters.map(letter => 
-                        <li>
+                <ul className='symbol_list mb-3'>
+                    {upperCaseGreekLetters.map((letter, index) => 
+                        <li key={index}>
                             <button title={letter[1]} onClick={() => navigator.clipboard.writeText(letter[0])}>
                                 {letter[0]}
                             </button>
@@ -28,8 +28,8 @@ export function MathTable() {
                     )}
                 </ul>
                 <ul className='symbol_list'>
-                    {lowerCaseGreekLetters.map(letter => 
-                        <li>
+                    {lowerCaseGreekLetters.map((letter, index) => 
+                        <li key={index}>
                             <button title={letter[1]} onClick={() => navigator.clipboard.writeText(letter[0])}>
                                     {letter[0]}
                             </button>
@@ -41,8 +41,8 @@ export function MathTable() {
                 <h3>Aritmética</h3>
                     <div>
                         <ul className='symbol_list'>
-                            {arithmeticSymbols.map(letter => 
-                                <li>
+                            {arithmeticSymbols.map((letter, index) => 
+                                <li key={index}>
                                     <button title={letter[1]} onClick={() => navigator.clipboard.writeText(letter[0])}>
                                         {letter[0]}
                                     </button>
@@ -55,8 +55,8 @@ export function MathTable() {
                 <h3>Teoría de conjuntos</h3>
                     <div>
                         <ul className='symbol_list'>
-                            {setSymbols.map(letter => 
-                                <li>
+                            {setSymbols.map((letter, index) => 
+                                <li key={index}>
                                     <button title={letter[1]} onClick={() => navigator.clipboard.writeText(letter[0])}>
                                         {letter[0]}
                                     </button>
@@ -69,8 +69,8 @@ export function MathTable() {
                 <h3>Lógica</h3>
                 <div>
                     <ul className='symbol_list'>
-                        {logicSymbols.map(letter => 
-                            <li>
+                        {logicSymbols.map((letter, index) => 
+                            <li key={index}>
                                 <button title={letter[1]} onClick={() => navigator.clipboard.writeText(letter[0])}>
                                     {letter[0]}
                                 </button>
@@ -83,8 +83,8 @@ export function MathTable() {
                 <h3>Conjuntos numéricos</h3>
                     <div>
                         <ul className='symbol_list'>
-                            {numericSetsSymbols.map(letter => 
-                                <li>
+                            {numericSetsSymbols.map((letter, index) => 
+                                <li key={index}>
                                     <button title={letter[1]} onClick={() => navigator.clipboard.writeText(letter[0])}>
                                         {letter[0]}
                                     </button>
@@ -97,8 +97,8 @@ export function MathTable() {
                 <h3>Álgebra</h3>
                     <div>
                         <ul className='symbol_list'>
-                            {algebraSymbols.map(letter => 
-                                <li>
+                            {algebraSymbols.map((letter, index) => 
+                                <li key={index}>
                                     <button title={letter[1]} onClick={() => navigator.clipboard.writeText(letter[0])}>
                                         {letter[0]}
                                     </button>
@@ -106,7 +106,7 @@ export function MathTable() {
                             )}
                         </ul>
                 </div>
-            </article>         
-        </section>
+            </article>
+        </div>
   )
 }

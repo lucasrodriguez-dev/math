@@ -5,11 +5,11 @@ const lowerCaseGreekLetters = [["α", "alfa"], ["β", "beta"], ["γ", "gamma"], 
 
 const logicSymbols = [["⊥", "bottom"], ["¬", "not"], ["→", "then"], ["↔", "iff"], ["∧", "and"], ["∨", "or"], ["∀", "para todo"], ["∃", "existe"]]
 
-const arithmeticSymbols = [["+", "más"], ["-", "menos"], ["±", "más – menos"], ["×", "por"], ["/", "barra"], ["%", "módulo"], ["²", "al cuadrado"], ["³", "al cubo"], ["√", "raíz cuadrada"], ["∛", "raíz cúbica"], ["=", "igual"], ["≠", "distinto"], ["<", "menor"], [">", "mayor"], ["≤", "menor o igual"], ["≥", "mayor o igual"], ["≪", "mucho menor"], ["≫", "mucho mayor"], ["∞", "infinito"], ["∫", "integral"], ["∑", "sumatoria"], ["∏", "productoria"], ["∣", "divide"], ["∤", "no divide"], ["≡", "congruente"], ["≢", "no congruente"]]
+const arithmeticSymbols = [["+", "más"], ["-", "menos"], ["±", "más – menos"], ["×", "por"], ["/", "barra"], ["%", "módulo"], ["ⁿ", "a la n"], ["²", "al cuadrado"], ["³", "al cubo"], ["√", "raíz cuadrada"], ["∛", "raíz cúbica"], ["=", "igual"], ["≠", "distinto"], ["<", "menor"], [">", "mayor"], ["≤", "menor o igual"], ["≥", "mayor o igual"], ["≪", "mucho menor"], ["≫", "mucho mayor"], ["∞", "infinito"], ["∫", "integral"], ["∑", "sumatoria"], ["∏", "productoria"], ["∣", "divide"], ["∤", "no divide"], ["≡", "congruente"], ["≢", "no congruente"]]
 
 const setSymbols = [["∅", "conjunto vacío"], ["{}", "conjunto"], ["∁", "complemento"], ["⊂", "contenido estricto"], ["⊆", "contenido"], ["⊃", "contiene estricto"], ["⊇", "contiene"], ["∪", "unión"], ["∩", "intersección"], ["∖", "diferencia"], ["⋃", "unión de familia"], ["⋂", "intersección de familia"], ["∈", "pertenece"], ["∉", "no pertenece"], ["∃", "existe"], ["∄", "no existe"]]
 
-const algebraSymbols = [["⟨⟩", "producto interno"], ["∥∥", "norma"], ["⊕", "suma directa"]]
+const algebraSymbols = [["⟨⟩", "producto interno"], ["∥∥", "norma"], ["⊕", "suma directa"], ["ᵗ", "traspuesta"]]
 
 const numericSetsSymbols = [["ℂ", "complejos"], ["ℝ", "reales"], ["ℚ", "racionales"], ["ℤ", "enteros"], ["ℕ", "naturales"]]
 

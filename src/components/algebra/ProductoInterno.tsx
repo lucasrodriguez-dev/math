@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import type { complejo } from "../../types/general";
+import type { Complejo } from "../../types/general";
 import { producto_interno_usual } from "../../functions/linear_algebra";
 import { VectorInput } from "../general/VectorInput";
 
@@ -7,10 +7,10 @@ export function ProductoInterno() {
 
     const [dimension, setDimension] = useState(1)
   
-    const [vectorV, setVectorV] = useState<complejo[]>(Array.from({ length: dimension }, () => ({ re: 0, im: 0 })))
-    const [vectorW, setVectorW] = useState<complejo[]>(Array.from({ length: dimension }, () => ({ re: 0, im: 0 })))
+    const [vectorV, setVectorV] = useState<Complejo[]>(Array.from({ length: dimension }, () => ({ re: 0, im: 0 })))
+    const [vectorW, setVectorW] = useState<Complejo[]>(Array.from({ length: dimension }, () => ({ re: 0, im: 0 })))
 
-    const [resultado, setResultado] = useState<complejo | null>(null)
+    const [resultado, setResultado] = useState<Complejo | null>(null)
 
     const cambiarDimension = (nuevaDimension: number) => {
         setDimension(nuevaDimension)

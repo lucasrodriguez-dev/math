@@ -1,7 +1,7 @@
 import React from 'react'
-import type { complejo } from '../../types/general'
+import type { Complejo } from '../../types/general'
 
-export const VectorInput = (vector: complejo[], setVector: (v: complejo[]) => void) => {
+export const VectorInput = (vector: Complejo[], setVector: (v: Complejo[]) => void) => {
   return (
     <>
         <span className="parentesis_vector">(</span>

@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
-import type { complejo } from '../../types/general'
+import type { Complejo } from '../../types/general'
 import { norma_usual, producto_interno_usual } from '../../functions/linear_algebra'
 import { VectorInput } from '../general/VectorInput'
 
 export function Norma() {
 
   const [dimension, setDimension] = useState(1)
-  const [vector, setVector] = useState<complejo[]>(Array.from({ length: dimension }, () => ({ re: 0, im: 0 })))
+  const [vector, setVector] = useState<Complejo[]>(Array.from({ length: dimension }, () => ({ re: 0, im: 0 })))
   const [resultado, setResultado] = useState<string | null>(null)
 
     const cambiarDimension = (nuevaDimension: number) => {

@@ -5,8 +5,8 @@ import Layout from '../layouts/Layout.astro';
 
 <Layout>
 	<h1>Bienvenido a Math 👋</h1>
-	<section class="mt-5 flex flex-col gap-10 md:flex-row md:gap-0 justify-between">
-		<article>
+	<section class="mt-5 grid grid-cols-1 gap-10 md:grid-cols-3 md:gap-0">
+		<article class="md:col-span-1">
 			<p class="mb-5">Calcule en el área de la matemática que necesite</p>
 			<ul class="flex flex-col gap-3">
 				<li>
@@ -20,7 +20,7 @@ import Layout from '../layouts/Layout.astro';
 				</li>
 			</ul>
 		</article>
-		<article>
+		<article class="md:col-span-2">
 			<MathTable client:load/>
 		</article>
 	</section>

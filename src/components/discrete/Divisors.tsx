@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { numberOfPositiveDivisors } from '../../functions/discrete'
+import { cantidad_divisores_positivos } from '../../functions/discrete'
 
 export default function Divisors() {
 
@@ -8,7 +8,7 @@ export default function Divisors() {
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault()
-        setResult(numberOfPositiveDivisors(BigInt(n)))
+        setResult(cantidad_divisores_positivos(BigInt(n)))
     }
 
     return (

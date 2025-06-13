@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { primeFactors } from '../../functions/discrete'
+import { factores_primos_con_multiplicidad } from '../../functions/discrete'
 import { factorExponents } from '../../functions/bigint_utils'
 
 export default function Prime() {
@@ -9,7 +9,7 @@ export default function Prime() {
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault()
-        setResult(primeFactors(BigInt(n)))
+        setResult(factores_primos_con_multiplicidad(BigInt(n)))
     }
 
     return (

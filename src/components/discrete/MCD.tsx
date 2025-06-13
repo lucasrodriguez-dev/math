@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { extendedMcd } from '../../functions/discrete'
+import { mcd_concoeficientes } from '../../functions/discrete'
 
 export default function MCD() {
 
@@ -15,7 +15,7 @@ export default function MCD() {
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault()
         setUsedInputs({a,b})
-        setResult(extendedMcd(BigInt(a),BigInt(b)))
+        setResult(mcd_concoeficientes(BigInt(a),BigInt(b)))
     }
 
     return (

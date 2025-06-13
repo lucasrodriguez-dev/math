@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { congruent } from '../../functions/discrete'
+import { congruente } from '../../functions/discrete'
 
 export default function Congruent() {
 
@@ -11,7 +11,7 @@ export default function Congruent() {
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault()
         setUsedInputs({a,n})
-        setResult(congruent(BigInt(a),BigInt(n)))
+        setResult(congruente(BigInt(a),BigInt(n)))
     }
 
     return (

@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { solveDiophantine } from '../../functions/discrete'
+import { resolver_diofantica } from '../../functions/discrete'
 
 export default function Diophantine() {
 
@@ -12,7 +12,7 @@ export default function Diophantine() {
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault()
         setUsedInputs({ a, b, c })
-        setResult(solveDiophantine(BigInt(a),BigInt(b),BigInt(c)))
+        setResult(resolver_diofantica(BigInt(a),BigInt(b),BigInt(c)))
     }
 
     return (

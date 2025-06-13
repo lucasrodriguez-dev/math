@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { solveCongruence } from '../../functions/discrete'
+import { resolver_congruencia } from '../../functions/discrete'
 
 export default function CongruentEcuation() {
 
@@ -12,7 +12,7 @@ export default function CongruentEcuation() {
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault()
         setUsedInputs({a,b,n})
-        setResult(solveCongruence(BigInt(a),BigInt(b),BigInt(n)))
+        setResult(resolver_congruencia(BigInt(a),BigInt(b),BigInt(n)))
     }
 
     return (

@@ -1,11 +1,16 @@
-import { abs, euclideanMod, factorExponents, sign, digits } from "./bigint_utils"
+import { abs, euclideanMod as resto, factorExponents, sign, digits } from "./bigint_utils"
 
-export function extendedMcd(a: bigint, b: bigint): {
+export function phi_de_euler(m: bigint): bigint{
+    if(m < 1) throw new Error("m debe ser mayor o igual que 1")
+    return m === 1n ? 1n : factores_primos(m).reduce((acc, p) => acc*(p - 1n)/p, m)
+}
+
+export function mcd_concoeficientes(a: bigint, b: bigint): {
     mcd: bigint,
     x_a: bigint,
     x_b: bigint
 } {
-    const {mcd, x_a, x_b} = extendedMcdPositive(abs(a), abs(b))
+    const {mcd, x_a, x_b} = mcd_concoeficientes_parametrospositivos(abs(a), abs(b))
     return {
         mcd: mcd,
         x_a: x_a*sign(a),
@@ -19,11 +24,11 @@ function mcd(a: bigint, b: bigint): bigint{
     if(b < a)
         [a,b] = [b,a]
     while(b !== 0n)
-        [a,b] = [b, euclideanMod(a,b)]
+        [a,b] = [b, resto(a,b)]
     return a
 }
 
-function extendedMcdPositive(a: bigint, b: bigint): {
+function mcd_concoeficientes_parametrospositivos(a: bigint, b: bigint): {
     mcd: bigint,
     x_a: bigint,
     x_b: bigint
@@ -34,7 +39,7 @@ function extendedMcdPositive(a: bigint, b: bigint): {
             x_a: 1n,
             x_b: 0n
         }
-    const {mcd, x_a, x_b} = extendedMcdPositive(b, euclideanMod(a,b))
+    const {mcd, x_a, x_b} = mcd_concoeficientes_parametrospositivos(b, resto(a,b))
     return {
         mcd: mcd,
         x_a: x_b,
@@ -48,7 +53,11 @@ export function mcm(a: bigint, b: bigint): bigint{
     return abs(a*b)/mcd(a,b)
 }
 
-export function primeFactors(n: bigint): bigint[]{
+export function factores_primos(n: bigint): bigint[]{
+    return [... new Set(factores_primos_con_multiplicidad(n))]
+}
+
+export function factores_primos_con_multiplicidad(n: bigint): bigint[]{
     if (n === 0n || n === 1n || n === -1n) return [n]
     n = abs(n)
 
@@ -74,47 +83,47 @@ export function primeFactors(n: bigint): bigint[]{
     return factors
 }
 
-export function numberOfPositiveDivisors(n: bigint): bigint{
+export function cantidad_divisores_positivos(n: bigint): bigint{
     if(n === 0n || abs(n) === 1n)
         return abs(n)
-    const exponents = factorExponents(primeFactors(n)).map(([,exponent]) => BigInt(exponent))
+    const exponents = factorExponents(factores_primos_con_multiplicidad(n)).map(([,exponent]) => BigInt(exponent))
     let result = 1n
     for(let i = 0; i < exponents.length; i++)
         result *= (exponents[i]+1n)
     return result
 }
 
-export function congruent(a: bigint, n: bigint): bigint{
+export function congruente(a: bigint, n: bigint): bigint{
     if(n === 0n){
         if(a === 0n)
             return 0n
         return -1n
     }
-    return euclideanMod(a,n)
+    return resto(a,n)
 }
 
-export function solveCongruence(a: bigint, b: bigint, n: bigint): {
+export function resolver_congruencia(a: bigint, b: bigint, n: bigint): {
     hasSolution: boolean,
     solution?: bigint,
     mcd: bigint
 }{
-    const {hasSolution, x, mcd} = solveDiophantine(a,n,b)
+    const {hasSolution, x, mcd} = resolver_diofantica(a,n,b)
     if(!hasSolution || !x) return {hasSolution: false, mcd: mcd}
     return {
         hasSolution: true,
-        solution: euclideanMod(x,n/mcd),
+        solution: resto(x,n/mcd),
         mcd: mcd
     }
 }
 
-export function solveDiophantine(a: bigint, b: bigint, c: bigint): {
+export function resolver_diofantica(a: bigint, b: bigint, c: bigint): {
     hasSolution: boolean,
     x?: bigint,
     y?: bigint,
     mcd: bigint
 }{
-    const {mcd, x_a, x_b} = extendedMcd(a,b)
-    if(euclideanMod(c,mcd) !== 0n) return { hasSolution: false, mcd: mcd }
+    const {mcd, x_a, x_b} = mcd_concoeficientes(a,b)
+    if(resto(c,mcd) !== 0n) return { hasSolution: false, mcd: mcd }
     const factor = c/mcd
     return {
         hasSolution: true,
@@ -124,19 +133,19 @@ export function solveDiophantine(a: bigint, b: bigint, c: bigint): {
     }
 }
 
-export function changeBase(n: bigint, base: bigint, newBase: bigint): bigint[]{
+export function cambiar_base(n: bigint, base: bigint, newBase: bigint): bigint[]{
     if(newBase < 2) throw new Error("La base debe ser mayor o igual que 2")
     if(n === 0n) return [n]
-    n = convertToBase10(digits(n), base)
+    n = convertir_a_base10(digits(n), base)
     const newDigits: bigint[] = []
     while(n > 0n){
-        newDigits.push(euclideanMod(n, newBase))
+        newDigits.push(resto(n, newBase))
         n /= newBase
     }
     return newDigits.reverse()
 }
 
-export function convertToBase10(digits: bigint[], base: bigint): bigint{
+export function convertir_a_base10(digits: bigint[], base: bigint): bigint{
     if(base < 2) throw new Error("La base debe ser mayor o igual que 2")
     let result = 0n
     for (let i = 0; i < digits.length; i++) {

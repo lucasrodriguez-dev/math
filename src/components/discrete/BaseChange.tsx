@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { changeBase } from '../../functions/discrete'
+import { cambiar_base } from '../../functions/discrete'
 import { abs } from '../../functions/bigint_utils'
 
 export default function BaseChange() {
@@ -13,7 +13,7 @@ export default function BaseChange() {
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault()
         setUsedInputs({n,nBase,newBase})
-        setResult(changeBase(BigInt(n), BigInt(nBase), BigInt(newBase)))
+        setResult(cambiar_base(BigInt(n), BigInt(nBase), BigInt(newBase)))
     }
 
     return (

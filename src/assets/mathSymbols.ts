@@ -94,12 +94,12 @@ export const math_symbols: MathSymbolCategory[] = [
             {
                 subtitle: "conectivos",
                 symbols: [
-                    {letter: "⊥", name: "bottom"},
-                    {letter: "¬", name: "negación"},
-                    {letter: "∧", name: "conjunción"},
-                    {letter: "∨", name: "disyunción"},
-                    {letter: "→", name: "implica"},
-                    {letter: "↔", name: "si y solo si"}
+                    {letter: "⊥", name: "bottom/absurdo/contradicción"},
+                    {letter: "¬", name: "negación/not"},
+                    {letter: "∧", name: "conjunción/and/y"},
+                    {letter: "∨", name: "disyunción/or/o"},
+                    {letter: "→", name: "implica/then/entonces"},
+                    {letter: "↔", name: "si y solo si/iff/sii"}
                 ]
             },
             {
@@ -161,8 +161,8 @@ export const math_symbols: MathSymbolCategory[] = [
                 symbols: [
                     {letter: "≪", name: "mucho menor"},
                     {letter: "≫", name: "mucho mayor"},
-                    {letter: "≈", name: "aproximadamente igual"},
-                    {letter: "∝", name: "proporcional a"}
+                    {letter: "≈", name: "aproximadamente"},
+                    {letter: "∝", name: "proporcional"}
                 ]
             },
             {
@@ -170,8 +170,8 @@ export const math_symbols: MathSymbolCategory[] = [
                 symbols: [
                     {letter: "≡", name: "congruente"},
                     {letter: "≢", name: "no congruente"},
-                    {letter: "≅", name: "es congruente con"},
-                    {letter: "≃", name: "equivalente aproximadamente"}
+                    {letter: "≅", name: "isomorfo"},
+                    {letter: "≃", name: "equivalente aproximadamente/isomorfo"}
                 ]
             }
         ]
@@ -214,7 +214,7 @@ export const math_symbols: MathSymbolCategory[] = [
         ]
     },
     {
-        title: "álgebra y cálculo",
+        title: "cálculo",
         subcategories: [
         {
             subtitle: "sumatoria y productoria",
@@ -226,7 +226,7 @@ export const math_symbols: MathSymbolCategory[] = [
         {
             subtitle: "derivadas e integrales",
             symbols: [
-            {letter: "′", name: "prima"},
+            {letter: "′", name: "derivada/prima"},
             {letter: "∫", name: "integral"},
             {letter: "∬", name: "doble integral"},
             {letter: "∂", name: "derivada parcial"}

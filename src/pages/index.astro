@@ -1,11 +1,13 @@
 ---
-import { MathTable } from '../components/general/MathTable';
+import BaseChange from '../components/discrete/BaseChange';
+import MCD from '../components/discrete/MCD';
+import Prime from '../components/discrete/Prime';
 import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout>
 	<h1>Bienvenido a Math 👋</h1>
-	<section class="mt-5 grid grid-cols-1 gap-10 md:grid-cols-3 md:gap-0">
+	<section class="grid grid-cols-1 gap-10 mt-5 mb-5 md:mb-0 lg:mb-0 xl:mb-0 md:grid-cols-3 md:gap-0">
 		<article class="md:col-span-1">
 			<p class="mb-5">Calcule en el área de la matemática que necesite</p>
 			<ul class="flex flex-col gap-3">
@@ -20,8 +22,20 @@ import Layout from '../layouts/Layout.astro';
 				</li>
 			</ul>
 		</article>
-		<article class="md:col-span-2">
-			<MathTable client:load/>
+		<article class="section-math-article md:col-span-2">
+			<article id="article-prime" class="math-article">
+            	<h2>Factorización en Primos</h2>
+            	<Prime client:load/>
+        	</article>        
+			<article id="article-basechange" class="math-article">
+            	<h2>Cambio de Base</h2>
+            	<BaseChange client:load/>
+        	</article>
+			<article id="article-mcd" class="math-article">
+            	<h2>Máximo Común Divisor</h2>
+            	<MCD client:load/>
+        	</article>
 		</article>
 	</section>
+	<a href="/discrete" class="btn-link btn-super md:hidden lg:hidden xl:hidden">Prueba más funciones 🚀</a>
 </Layout>

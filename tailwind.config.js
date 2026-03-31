@@ -9,6 +9,7 @@ export default {
           light: '#DBEAFE',
           dark: '#243f84'
         },
+        link: '#686DB6',
         secondary: '#c3dcfa',
         terciary: '#ddd',
         accent: '#FACC15',

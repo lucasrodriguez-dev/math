@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import type { Complejo } from '../../types/general'
 import { norma_usual, producto_interno_usual } from '../../functions/linear_algebra'
-import { VectorInput } from '../general/VectorInput'
+import { VectorInput } from '../alphabet/VectorInput'
 
 export function Norma() {
 

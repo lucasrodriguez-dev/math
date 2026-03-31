@@ -27,7 +27,7 @@ export function MathTable() {
         <div className="relative w-full max-w-md">
           <SymbolAutocomplete symbols={symbols} inputRef={inputRef} inputValue={text} setInputValue={setText} onSymbolInsert={(sym) => {inputRef.current?.focus();}}/>
           <button
-            className="btn-secondary h-full bg-transparent absolute right-1 top-1/2 -translate-y-1/2"
+            className="absolute h-full -translate-y-1/2 bg-transparent btn-secondary right-1 top-1/2"
             onClick={() => {
               setText("");
               inputRef.current?.focus();
@@ -37,7 +37,7 @@ export function MathTable() {
           </button>
         </div>
         <button
-          className="btn-secondary h-full overflow-hidden"
+          className="h-full overflow-hidden btn-secondary"
           onClick={handleCopyClick}
         >
           {justCopied ? <CopyCheckIcon className="w-5 h-5" /> : <CopyIcon className="w-5 h-5" />}

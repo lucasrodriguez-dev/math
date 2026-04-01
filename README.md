@@ -1,6 +1,6 @@
 # Math
 
-App for performing advanced mathematical operations, such as .
+App for performing advanced mathematical operations.
 
 ---
 
@@ -24,16 +24,16 @@ App for performing advanced mathematical operations, such as .
 ---
 
 ## Technologies
-- 
-- 
-- 
+- TypeScript
+- Astro
+- Tailwind
 
 ---
 
 ## Requirements
-- 
-- 
-- 
+- Node.js >= 18
+- npm o pnpm
+- Git
 
 ---
 
@@ -72,9 +72,15 @@ Descripción breve (opcional):
 
 ## Functionalities
 
-- 
-- 
-- 
+- Prime factorization
+- Base change
+- Greatest common divisor
+- Least common divisor
+- Number of divisors
+- Congruence equations
+- Diophantine equations
+- Internal product
+- Norm
 
 ---
 

@@ -55,18 +55,20 @@ App for performing advanced mathematical operations.
 ├── public/
 │   └── favicon.svg
 ├── src/
+│   ├── assets/
+│   ├── components/
+│   ├── functions/
+│   ├── icons/
 │   ├── layouts/
 │   │   └── Layout.astro
 │   └── pages/
 │       └── index.astro
+│       └── ...
+│   ├── styles/
+│   ├── types/
 └── package.json
+└── ...
 ```
-
-Descripción breve (opcional):
-
-- `components/`:
-- `services/`:
-- `utils/`:
 
 ---
 

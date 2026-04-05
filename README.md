@@ -94,6 +94,7 @@ App for performing advanced mathematical operations.
   - [ ] combinations with repetition
   - [ ] permutations
   - [ ] permutations with repetition
+  - [ ] division simplification
 - [ ] Add toggle button for changing bases in base change function 
 - [ ] New calculus functions:
   - [ ] derivative

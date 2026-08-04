@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { cambiar_base } from '../../functions/discrete'
+import { cambiar_base, cambiar_base_string, convertir_a_hexadecimal } from '../../functions/discrete'
 import { abs } from '../../functions/bigint_utils'
 
 export default function BaseChange() {
@@ -28,11 +28,11 @@ export default function BaseChange() {
                 {
                     result === null ? ""
                     : <>
-                        (<span>{abs(BigInt(usedInputs!.n))}</span>)
-                        <sub>{abs(BigInt(usedInputs!.nBase))}</sub>
+                        <span>{Number(abs(BigInt(usedInputs!.n)))}</span>
+                        <sub>{Number(abs(BigInt(usedInputs!.nBase)))}</sub>
                         {" = "}
-                        (<span>{result.map((d) => d.toString()).join('')}</span>)
-                        <sub>{abs(BigInt(usedInputs!.newBase))}</sub>
+                        <span>{cambiar_base_string(usedInputs!.n, BigInt(usedInputs!.nBase), BigInt(usedInputs!.newBase))}</span>
+                        {newBase != "16" && <sub>{Number(abs(BigInt(usedInputs!.newBase)))}</sub>}
                     </>
                 }
             </code>

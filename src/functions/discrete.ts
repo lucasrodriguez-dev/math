@@ -145,12 +145,30 @@ export function cambiar_base(n: bigint, base: bigint, newBase: bigint): bigint[]
     return newDigits.reverse()
 }
 
+export function cambiar_base_string(n: string, base: bigint, newBase: bigint): string{
+    const digitos = cambiar_base(BigInt(n), base, newBase)
+    if(newBase === 16n) return `0x${convertir_a_hexadecimal(convertir_a_base10(digitos, newBase))}`
+    return digitos.map((d) => d.toString()).join('')
+}
+
 export function convertir_a_base10(digits: bigint[], base: bigint): bigint{
     if(base < 2) throw new Error("La base debe ser mayor o igual que 2")
     let result = 0n
     for (let i = 0; i < digits.length; i++) {
         const power = BigInt(digits.length - 1 - i)
         result += digits[i] * (base ** power)
+    }
+    return result
+}
+
+export function convertir_a_hexadecimal(n: bigint): string{
+    if(n === 0n) return "0"
+    const hexDigits = "0123456789ABCDEF"
+    let result = ""
+    while(n > 0n){
+        const digit = Number(resto(n, 16n))
+        result = hexDigits[digit] + result
+        n /= 16n
     }
     return result
 }
